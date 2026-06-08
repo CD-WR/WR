@@ -56,13 +56,13 @@ strong { font-weight: 500; }
 }
 #section-indicators { display: flex; gap: 0; align-items: center; }
 .sec-dot {
-  width: 22px; height: 34px; border: none; background: none;
-  color: var(--text-faint); font-family: var(--font-mono); font-size: 0.58rem;
+  width: 24px; height: 34px; border: none; background: none;
+  color: var(--text-dim); font-family: var(--font-mono); font-size: 0.65rem;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; user-select: none; transition: color 0.25s;
   border-bottom: 2px solid transparent; letter-spacing: 0;
 }
-.sec-dot.active { color: var(--accent); border-bottom-color: var(--accent); }
+.sec-dot.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
 .sec-dot.done { color: var(--text-dim); }
 
 /* ═══ BACK BUTTON ═══ */
@@ -80,9 +80,9 @@ strong { font-weight: 500; }
 #score-badge {
   position: fixed; right: 1.25rem; top: 50%; transform: translateY(-50%);
   z-index: 90; display: none;
-  font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim);
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--text);
   writing-mode: vertical-rl; letter-spacing: 0.08em;
-  border-left: 1px solid var(--border); padding-left: 0.4rem;
+  border-left: 1px solid var(--border-mid); padding-left: 0.5rem;
 }
 
 /* ═══ SECTIONS ═══ */
@@ -152,8 +152,8 @@ strong { font-weight: 500; }
 }
 .time-badge {
   position: absolute; bottom: 2rem; right: 2.5rem;
-  font-family: var(--font-mono); font-size: 0.6rem;
-  color: var(--text-faint); letter-spacing: 0.1em;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  color: var(--text-dim); letter-spacing: 0.08em;
 }
 
 /* ═══ BUTTONS ═══ */
