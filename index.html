@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schulrecht am MWG Bayreuth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar-container">
+  <div id="progress-bar"></div>
+  <div id="section-indicators">
+    <span class="sec-dot active" data-sec="0" title="Intro">1</span>
+    <span class="sec-dot" data-sec="1" title="Grundlagen">2</span>
+    <span class="sec-dot" data-sec="2" title="Unterricht">3</span>
+    <span class="sec-dot" data-sec="3" title="Pflichten">4</span>
+    <span class="sec-dot" data-sec="4" title="Escape">5</span>
+    <span class="sec-dot" data-sec="5" title="Abschluss">6</span>
+  </div>
+</div>
+
+<!-- Back Button -->
+<button id="back-btn" aria-label="Zurück">&#8592;</button>
+
+<!-- Score Badge -->
+<div id="score-badge"><span id="score-live">0</span> / <span id="score-total">0</span></div>
+
+<!-- ═══════════════════════════════ SECTION 1 — HERO ═══════════════════════════════ -->
+<section id="sec-0" class="section active">
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge mono">§ Schulrecht</div>
+    <h1 class="hero-title">SCHULRECHT<br><span class="accent-text">AM MWG</span></h1>
+    <p class="hero-sub">Was du dürfest, was du musst —<br>und was passiert, wenn nicht.</p>
+    <p class="hero-desc">Die Hausordnung des MWG interaktiv erleben — kein Vorwissen nötig. Einfach durchklicken.</p>
+    <button class="btn-primary" onclick="App.goTo(1)">Starten &rarr;</button>
+  </div>
+  <div class="time-badge">&#8987; ca. 7 Min.</div>
+</section>
+
+<!-- ═══════════════════════════════ SECTION 2 — GRUNDLAGEN ═══════════════════════════════ -->
+<section id="sec-1" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag mono">02 — Grundlagen</span>
+      <h2>Was ist die Hausordnung?</h2>
+      <p class="section-lead">Klicke auf jede Karte, um sie umzudrehen und mehr zu erfahren.</p>
+    </div>
+
+    <div class="flip-cards-row">
+      <div class="flip-card" tabindex="0" role="button" aria-label="Karte 1 umdrehen">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="card-icon">§</div>
+            <h3>Die Hausordnung</h3>
+            <p class="hint-text">Klicken zum Aufdecken</p>
+          </div>
+          <div class="flip-back">
+            <p>Die Hausordnung des MWG <strong>ergänzt die staatliche Schulordnung</strong>. Sie regelt das Zusammenleben von rund 1.000 Schulmitgliedern.</p>
+            <p class="source-note">Stand: Juli 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-label="Karte 2 umdrehen">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="card-icon">&#127982;</div>
+            <h3>Das Schulgelände</h3>
+            <p class="hint-text">Klicken zum Aufdecken</p>
+          </div>
+          <div class="flip-back">
+            <p>Schulgelände = <strong>Schulhaus, Pavillon, Sportanlagen, Mensa, Parkplatz und Park</strong> (= Pausenhof). Alle Regeln gelten auf dem gesamten Gelände.</p>
+            <p class="source-note">§1.1 Hausordnung</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-label="Karte 3 umdrehen">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="card-icon">&#128274;</div>
+            <h3>Einrichtung & Eigentum</h3>
+            <p class="hint-text">Klicken zum Aufdecken</p>
+          </div>
+          <div class="flip-back">
+            <p>Mutwillige Beschädigungen werden <strong>rechtlich geahndet</strong>. Wertgegenstände können im Sekretariat hinterlegt werden — bei Diebstahl haftet die Schule nicht.</p>
+            <p class="source-note">§1.2–1.4 Hausordnung</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Quiz -->
+    <div id="quiz-grundlagen" class="quiz-block">
+      <div class="quiz-header">
+        <span class="mono quiz-label">Mini-Quiz</span>
+        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 2 beantwortet</span>
+      </div>
+
+      <div class="quiz-question" id="qq1" data-answered="false">
+        <p class="q-text"><strong>Frage 1:</strong> Wo gilt die Hausordnung des MWG?</p>
+        <div class="options-grid">
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">A</span>Nur im Schulgebäude</button>
+          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">B</span>Auf dem gesamten Schulgelände</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">C</span>Nur in Klassenzimmern</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">D</span>Nur während des Unterrichts</button>
+        </div>
+        <div class="feedback" id="fb-qq1"></div>
+      </div>
+
+      <div class="quiz-question" id="qq2" data-answered="false">
+        <p class="q-text"><strong>Frage 2:</strong> Was passiert bei mutwilliger Beschädigung von Schuleigentum?</p>
+        <div class="options-grid">
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">A</span>Nachsitzen</button>
+          <button class="opt-btn" data-q="qq2" data-correct="true" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">B</span>Rechtliche Ahndung</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">C</span>Keine Konsequenz</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">D</span>Putzdienst</button>
+        </div>
+        <div class="feedback" id="fb-qq2"></div>
+      </div>
+    </div>
+
+    <button class="btn-primary btn-next" id="next-grundlagen" onclick="App.goTo(2)" style="display:none">Weiter &#8594;</button>
+    <p class="skip-hint" id="skip-grundlagen">Beantworte beide Fragen, um fortzufahren.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SECTION 3 — UNTERRICHT ═══════════════════════════════ -->
+<section id="sec-2" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag mono">03 — Unterricht & Pausen</span>
+      <h2>Zeiten, Regeln, Handy</h2>
+      <p class="section-lead">Lerne die wichtigsten Zeiten kennen, dann ordne die Situationen richtig zu.</p>
+    </div>
+
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <div class="schedule-icon mono">&#128336;</div>
+        <div class="schedule-info">
+          <span class="schedule-label">Schulhaus offen</span>
+          <span class="schedule-time">Mo–Do 7:00–17:00 · Fr 7:00–15:00</span>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-icon mono">&#9997;</div>
+        <div class="schedule-info">
+          <span class="schedule-label">Unterrichtsbeginn</span>
+          <span class="schedule-time">7:50 Uhr (Klassenzimmer ab 7:15, Aufsicht ab 7:45)</span>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-icon mono">&#9749;</div>
+        <div class="schedule-info">
+          <span class="schedule-label">Große Pause</span>
+          <span class="schedule-time">09:20–09:35 Uhr (15 Minuten)</span>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-icon mono">&#128214;</div>
+        <div class="schedule-info">
+          <span class="schedule-label">Kleine Pause</span>
+          <span class="schedule-time">11:05–11:15 Uhr (10 Minuten)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-icon">&#128241;</div>
+      <div class="info-box-content">
+        <strong>Handy-Regel §10.1</strong>
+        <p>Handys, Smartwatches und digitale Geräte müssen von <strong>7:00 bis 16:35 Uhr ausgeschaltet</strong> und in der Schultasche sein.</p>
+        <p class="info-allowed">&#10003; Erlaubt: mit Lehrerlaubnis · im Unterricht bei Lehrereinsatz · in Freistunden/Mittagspause in Café blu, Computerraum oder Park (ohne Störung)</p>
+        <p class="info-forbidden">&#10007; Nicht erlaubt: Pausen auf Gängen · zwischen Stunden · im Unterricht ohne Erlaubnis</p>
+      </div>
+    </div>
+
+    <!-- Zuordnungsübung -->
+    <div class="assign-block">
+      <div style="margin-bottom:1rem;">
+        <span class="mono" style="font-size:.6rem;letter-spacing:.18em;color:var(--text-faint);text-transform:uppercase;">Zuordnungsübung</span>
+        <span style="display:block;font-size:.78rem;color:var(--text-dim);margin-top:.3rem;">Klicke auf ✓ Erlaubt oder ✗ Nicht erlaubt für jede Situation.</span>
+      </div>
+      <div id="assign-items">
+        <div class="assign-item" data-id="a1" data-answer="false">
+          <span class="assign-text">Handy in der Pause auf dem Gang benutzen</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+        <div class="assign-item" data-id="a2" data-answer="true">
+          <span class="assign-text">Schüler der 11. Klasse verlässt in der Mittagspause das Schulgelände</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+        <div class="assign-item" data-id="a3" data-answer="false">
+          <span class="assign-text">Ein 8.-Klässler verlässt das Gelände ohne Genehmigung</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+        <div class="assign-item" data-id="a4" data-answer="true">
+          <span class="assign-text">Handy im Café blu in der Freistunde, ohne jemanden zu stören</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+        <div class="assign-item" data-id="a5" data-answer="false">
+          <span class="assign-text">Schneeballwerfen auf dem Pausenhof</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary btn-next" id="next-unterricht" onclick="App.goTo(3)" style="display:none">Weiter &#8594;</button>
+    <p class="skip-hint" id="skip-unterricht">Ordne alle 5 Situationen zu, um fortzufahren.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SECTION 4 — PFLICHTEN ═══════════════════════════════ -->
+<section id="sec-3" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag mono">04 — Pflichten & Rechte</span>
+      <h2>Was würdest du tun?</h2>
+      <p class="section-lead">Drei Szenarien — zwei Entscheidungen — eine richtige Antwort.</p>
+    </div>
+
+    <div id="scenarios-container">
+      <!-- Szenario 1 -->
+      <div class="scenario-block" id="scen-1" data-answered="false">
+        <div class="scenario-badge mono">Szenario 1 / 3</div>
+        <div class="scenario-text">
+          <p class="scenario-situation">&#127775; Montagmorgen, 8:30 Uhr. Du wachst krank auf.</p>
+          <p>Was tust du jetzt?</p>
+        </div>
+        <div class="scenario-choices">
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 1)">
+            <span class="choice-label">A</span> Ich schreibe später eine SMS.
+          </button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 1)">
+            <span class="choice-label">B</span> Ich lasse meine Eltern sofort anrufen.
+          </button>
+        </div>
+        <div class="scenario-result" id="scen-1-result"></div>
+      </div>
+
+      <!-- Szenario 2 -->
+      <div class="scenario-block" id="scen-2" data-answered="false" style="display:none">
+        <div class="scenario-badge mono">Szenario 2 / 3</div>
+        <div class="scenario-text">
+          <p class="scenario-situation">&#128366; Es ist 16:35 Uhr. Der Unterricht ist zu Ende. Was machst du zuerst?</p>
+        </div>
+        <div class="scenario-choices">
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 2)">
+            <span class="choice-label">A</span> Ich packe meine Tasche und gehe.
+          </button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 2)">
+            <span class="choice-label">B</span> Stuhl hoch, Fenster zu, Licht aus — dann gehen.
+          </button>
+        </div>
+        <div class="scenario-result" id="scen-2-result"></div>
+      </div>
+
+      <!-- Szenario 3 -->
+      <div class="scenario-block" id="scen-3" data-answered="false" style="display:none">
+        <div class="scenario-badge mono">Szenario 3 / 3</div>
+        <div class="scenario-text">
+          <p class="scenario-situation">&#128168; Dein Freund fragt dich, ob ihr auf dem Schulhof eine E-Zigarette rauchen könnt.</p>
+        </div>
+        <div class="scenario-choices">
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 3)">
+            <span class="choice-label">A</span> Ja, klar.
+          </button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 3)">
+            <span class="choice-label">B</span> Nein, das ist verboten.
+          </button>
+        </div>
+        <div class="scenario-result" id="scen-3-result"></div>
+      </div>
+    </div>
+
+    <button class="btn-primary btn-next" id="next-pflichten" onclick="App.goTo(4)" style="display:none">Weiter &#8594;</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SECTION 5 — ESCAPE ROOM ═══════════════════════════════ -->
+<section id="sec-4" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag mono">05 — Mini Escape Room</span>
+      <h2>&#128274; Schließzeit</h2>
+      <p class="section-lead">17:00 Uhr. Der Hausmeister hat abgeschlossen. Du bist noch drin. Drei Räume, drei Rätsel, ein Code.</p>
+    </div>
+
+    <div id="escape-container">
+      <!-- Station Navigation -->
+      <div class="escape-nav">
+        <div class="escape-room-btn active" id="esc-nav-0" onclick="App.escGoTo(0)">&#128222; Sekretariat</div>
+        <div class="escape-room-btn locked" id="esc-nav-1">&#128214; Klassenzimmer</div>
+        <div class="escape-room-btn locked" id="esc-nav-2">&#9749; Café blu</div>
+        <div class="escape-room-btn locked" id="esc-nav-3">&#128274; Ausgang</div>
+      </div>
+
+      <!-- Station 0: Sekretariat -->
+      <div class="escape-room" id="escape-room-0">
+        <div class="room-desc">
+          <p>Du stehst im Sekretariat. Die Tür nach draußen ist zu. Finde den richtigen Weg hinaus!</p>
+          <p class="room-task">Aufgabe: Klicke auf den richtigen Gegenstand.</p>
+        </div>
+        <div class="room-objects">
+          <button class="room-obj" data-name="Telefon" data-correct="true" onclick="App.escClick(this, 0)" tabindex="0">
+            <span class="obj-icon">&#128222;</span>
+            <span class="obj-label">Telefon</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Schlüsselbrett" data-correct="false" onclick="App.escClick(this, 0)" tabindex="0">
+            <span class="obj-icon">&#128273;</span>
+            <span class="obj-label">Schlüsselbrett</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Stempelkissen" data-correct="false" onclick="App.escClick(this, 0)" tabindex="0">
+            <span class="obj-icon">&#128203;</span>
+            <span class="obj-label">Stempelkissen</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Notizblock" data-correct="false" onclick="App.escClick(this, 0)" tabindex="0">
+            <span class="obj-icon">&#128221;</span>
+            <span class="obj-label">Notizblock</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+        </div>
+        <div id="esc-popup-0" class="esc-popup" style="display:none">
+          <p>&#128222; Familie Bauer ruft an — zu spät. Bis wann hätte die telefonische Krankmeldung vorliegen müssen?</p>
+          <div class="esc-input-row">
+            <span class="mono">Uhrzeit (Stunde, 0–23):</span>
+            <input type="number" id="esc-ans-0" min="0" max="23" placeholder="z.B. 8" class="esc-input">
+            <button class="btn-small" onclick="App.escAnswer(0)">Prüfen</button>
+          </div>
+          <div id="esc-feedback-0" class="esc-feedback"></div>
+        </div>
+        <div id="esc-digit-0" class="digit-reveal" style="display:none">
+          <span class="digit-label mono">Erste Ziffer:</span>
+          <span class="digit-value mono">8</span>
+        </div>
+      </div>
+
+      <!-- Station 1: Klassenzimmer -->
+      <div class="escape-room" id="escape-room-1" style="display:none">
+        <div class="room-desc">
+          <p>Du bist im Klassenzimmer. Bevor du gehst, musst du alles richtig hinterlassen.</p>
+          <p class="room-task">Aufgabe: Klicke alle 3 Dinge an, die du laut §3.5 tun musst, wenn du das Klassenzimmer verlässt.</p>
+        </div>
+        <div class="room-objects">
+          <button class="room-obj" data-name="Stuhl" data-correct="true" onclick="App.escClick(this, 1)" tabindex="0">
+            <span class="obj-icon">&#129681;</span>
+            <span class="obj-label">Stuhl auf Tisch</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Fenster" data-correct="true" onclick="App.escClick(this, 1)" tabindex="0">
+            <span class="obj-icon">&#129695;</span>
+            <span class="obj-label">Fenster schließen</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Licht" data-correct="true" onclick="App.escClick(this, 1)" tabindex="0">
+            <span class="obj-icon">&#128161;</span>
+            <span class="obj-label">Licht ausschalten</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Tafel" data-correct="false" onclick="App.escClick(this, 1)" tabindex="0">
+            <span class="obj-icon">&#129001;</span>
+            <span class="obj-label">Tafel wischen</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Muell" data-correct="false" onclick="App.escClick(this, 1)" tabindex="0">
+            <span class="obj-icon">&#128465;</span>
+            <span class="obj-label">Müll leeren</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Schultasche" data-correct="false" onclick="App.escClick(this, 1)" tabindex="0">
+            <span class="obj-icon">&#127890;</span>
+            <span class="obj-label">Schultasche packen</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+        </div>
+        <div id="esc-s1-counter" class="esc-counter">0 / 3 ausgewählt</div>
+        <div id="esc-digit-1" class="digit-reveal" style="display:none">
+          <span class="digit-label mono">Zweite Ziffer:</span>
+          <span class="digit-value mono">3</span>
+        </div>
+      </div>
+
+      <!-- Station 2: Café blu -->
+      <div class="escape-room" id="escape-room-2" style="display:none">
+        <div class="room-desc">
+          <p>Du bist im Café blu. Ein Computer leuchtet.</p>
+          <p class="room-task">Aufgabe: Klicke auf den Computer.</p>
+        </div>
+        <div class="room-objects">
+          <button class="room-obj" data-name="Computer" data-correct="true" onclick="App.escClick(this, 2)" tabindex="0">
+            <span class="obj-icon">&#128187;</span>
+            <span class="obj-label">Computer</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Handy2" data-correct="false" onclick="App.escClick(this, 2)" tabindex="0">
+            <span class="obj-icon">&#128241;</span>
+            <span class="obj-label">Handy</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Kaffee" data-correct="false" onclick="App.escClick(this, 2)" tabindex="0">
+            <span class="obj-icon">&#9749;</span>
+            <span class="obj-label">Kaffeebecher</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+          <button class="room-obj" data-name="Aushang" data-correct="false" onclick="App.escClick(this, 2)" tabindex="0">
+            <span class="obj-icon">&#128196;</span>
+            <span class="obj-label">Aushang</span>
+            <span class="hotspot-pulse"></span>
+          </button>
+        </div>
+        <div id="esc-popup-2" class="esc-popup" style="display:none">
+          <p>&#128187; Welche Anwendungen sind im Schulnetz MWGstudy <strong>ohne Anmeldung</strong> nutzbar? (Mehrere möglich)</p>
+          <div class="checkbox-list">
+            <label><input type="checkbox" id="cb-instagram"> Instagram</label>
+            <label><input type="checkbox" id="cb-mebis"> Mebis</label>
+            <label><input type="checkbox" id="cb-youtube"> YouTube</label>
+            <label><input type="checkbox" id="cb-mathe"> Mathe-Gym</label>
+            <label><input type="checkbox" id="cb-spotify"> Spotify</label>
+          </div>
+          <button class="btn-small" onclick="App.escAnswer(2)">Prüfen</button>
+          <div id="esc-feedback-2" class="esc-feedback"></div>
+        </div>
+        <div id="esc-digit-2" class="digit-reveal" style="display:none">
+          <span class="digit-label mono">Dritte Ziffer:</span>
+          <span class="digit-value mono">2</span>
+        </div>
+      </div>
+
+      <!-- Station 3: Ausgang / Schloss -->
+      <div class="escape-room" id="escape-room-3" style="display:none">
+        <div class="room-desc">
+          <p>Du hast alle drei Ziffern! Gib den Code ein, um die Tür zu öffnen.</p>
+          <p class="room-task">Der Code besteht aus 3 Ziffern (aus den drei Räumen).</p>
+        </div>
+        <div class="padlock-container">
+          <div class="padlock" id="padlock">
+            <div class="padlock-shackle"></div>
+            <div class="padlock-body">
+              <div class="padlock-keyhole">&#128274;</div>
+            </div>
+          </div>
+        </div>
+        <div class="code-input-row">
+          <input type="text" id="escape-code" maxlength="3" placeholder="_ _ _" class="code-input" aria-label="Geheimcode eingeben">
+          <button class="btn-primary" onclick="App.escFinal()">&#128275; Öffnen</button>
+        </div>
+        <div id="esc-final-feedback" class="esc-feedback" style="text-align:center;margin-top:1rem;"></div>
+        <div class="digit-hints">
+          <span class="mono hint-digit" id="hint-d0">Raum 1: ?</span>
+          <span class="mono hint-digit" id="hint-d1">Raum 2: ?</span>
+          <span class="mono hint-digit" id="hint-d2">Raum 3: ?</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary btn-next" id="next-escape" onclick="App.goTo(5)" style="display:none">Weiter &#8594;</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SECTION 6 — ABSCHLUSS ═══════════════════════════════ -->
+<section id="sec-5" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag mono">06 — Abschluss</span>
+      <h2>Was du jetzt weißt</h2>
+    </div>
+
+    <div class="final-score-box">
+      <div class="final-score-label mono">Dein Ergebnis</div>
+      <div class="final-score-number" id="final-score-display">–</div>
+      <div class="final-score-sub" id="final-score-sub">Fragen richtig beantwortet</div>
+    </div>
+
+    <div class="takeaway-cards">
+      <div class="takeaway-card" data-delay="0">
+        <div class="takeaway-para mono">§9</div>
+        <p><strong>Krankmeldung bis 8 Uhr</strong> — telefonisch, jeden versäumten Schultag. Nach Wiederkehr schriftlich oder per Elternportal.</p>
+      </div>
+      <div class="takeaway-card" data-delay="1">
+        <div class="takeaway-para mono">§3.5</div>
+        <p><strong>Stuhl, Fenster, Licht</strong> — drei Pflichten vor jedem Verlassen des Klassenzimmers.</p>
+      </div>
+      <div class="takeaway-card" data-delay="2">
+        <div class="takeaway-para mono">§10</div>
+        <p><strong>Handy aus bis 16:35 Uhr</strong> — außer in Freistunden an erlaubten Orten (Café blu, Park, Computerraum).</p>
+      </div>
+    </div>
+
+    <!-- Quellen -->
+    <div class="quellen-section">
+      <button class="quellen-toggle" onclick="App.toggleQuellen()" aria-expanded="false" aria-controls="quellen-content">
+        &#128196; Quellen &amp; Grundlagen &#9660;
+      </button>
+      <div id="quellen-content" class="quellen-content" hidden>
+        <ul>
+          <li>Hausordnung MWG Bayreuth, Stand Juli 2023 (PDF, Markgräfin Wilhelmine Gymnasium Bayreuth)</li>
+          <li>Schulordnung für Gymnasien in Bayern (GSO), Bayerisches Staatsministerium für Unterricht und Kultus</li>
+          <li>Website MWG Bayreuth: <span class="mono">www.mwg-bayreuth.de</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;">
+      <button class="btn-primary" onclick="App.reset()">&#8635; Nochmal spielen</button>
+    </div>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
