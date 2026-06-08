@@ -393,7 +393,7 @@ const App = {
       f.className = 'feedback'; f.textContent = '';
     });
     document.querySelectorAll('.quiz-question').forEach(q => q.dataset.answered = 'false');
-    document.getElementById('q-grundlagen-progress').textContent = '0 / 3 beantwortet';
+    document.getElementById('q-grundlagen-progress').textContent = '0 / 4 beantwortet';
     // Reset assign
     document.querySelectorAll('.assign-item').forEach(item => {
       item.dataset.done = 'false';
@@ -440,9 +440,10 @@ const App = {
 /* ═══ HELPERS ═══ */
 function getFeedback(qid) {
   const map = {
-    'qq1': 'Das Schulgelände umfasst auch Sportanlagen, Mensa, Parkplatz und den Park (§1.1).',
-    'qq2': 'Laut §1.2 der Hausordnung werden mutwillige Beschädigungen rechtlich geahndet.',
-    'qq3': '§2.6.2 — Dach, Keller, das Gelände der Jean-Paul-Schule und die Baustelle sind tabu. Steinhalle, Café blu und grünes Klassenzimmer sind dagegen erlaubte Aufenthaltsräume (§2.9).'
+    'qq1': 'Achtung Zeitfalle: Die Geräte müssen von 7:00 bis 16:35 Uhr aus sein (§10) — obwohl das Schulhaus noch bis 17:00 Uhr geöffnet ist.',
+    'qq2': '§9.1 — an JEDEM versäumten Schultag muss bis 8 Uhr telefonisch gemeldet werden. Die schriftliche Entschuldigung (oder das Elternportal) kommt zusätzlich nach der Rückkehr.',
+    'qq3': '§2.6.2 — Dach, Keller, das Gelände der Jean-Paul-Schule und die Baustelle sind tabu. Steinhalle, grünes Klassenzimmer und LABS sind dagegen erlaubte Aufenthaltsräume (§2.9).',
+    'qq4': '§11.1 — nach 5 Minuten ist das Sekretariat zu verständigen, verantwortlich ist der Klassensprecher. Die Stunde ist nicht automatisch frei.'
   };
   return map[qid] || 'Leider falsch.';
 }
@@ -484,10 +485,10 @@ function getScenFeedback(num, isCorrect) {
 }
 
 function checkGrundlagen() {
-  const ids = ['qq1', 'qq2', 'qq3'];
+  const ids = ['qq1', 'qq2', 'qq3', 'qq4'];
   const done = ids.map(id => document.getElementById(id).dataset.answered === 'true');
   const answered = done.filter(Boolean).length;
-  document.getElementById('q-grundlagen-progress').textContent = `${answered} / 3 beantwortet`;
+  document.getElementById('q-grundlagen-progress').textContent = `${answered} / 4 beantwortet`;
   if (done.every(Boolean) && !State.grundlagenDone) {
     State.grundlagenDone = true;
     const nb = document.getElementById('next-grundlagen');

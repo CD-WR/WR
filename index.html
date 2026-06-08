@@ -97,41 +97,52 @@
     <!-- Mini Quiz -->
     <div id="quiz-grundlagen" class="quiz-block">
       <div class="quiz-header">
-        <span class="mono quiz-label">Mini-Quiz</span>
-        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 3 beantwortet</span>
+        <span class="mono quiz-label">Quiz · Achte auf die Details</span>
+        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 4 beantwortet</span>
       </div>
 
       <div class="quiz-question" id="qq1" data-answered="false">
-        <p class="q-text"><strong>Frage 1.</strong> Wo gilt die Hausordnung des MWG?</p>
+        <p class="q-text"><strong>Frage 1.</strong> Das Schulhaus ist montags bis <strong>17:00 Uhr</strong> geöffnet. Bis wann müssen Smartphones und Smartwatches trotzdem ausgeschaltet in der Schultasche bleiben?</p>
         <div class="options-grid">
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Nur im Schulgebäude</button>
-          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Auf dem gesamten Schulgelände</button>
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Nur in Klassenzimmern</button>
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Nur während des Unterrichts</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Bis 17:00 Uhr, wenn das Schulhaus schließt</button>
+          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Bis 16:35 Uhr</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Bis zum eigenen Unterrichtsende</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Bis 15:00 Uhr</button>
         </div>
         <div class="feedback" id="fb-qq1"></div>
       </div>
 
       <div class="quiz-question" id="qq2" data-answered="false">
-        <p class="q-text"><strong>Frage 2.</strong> Was passiert bei mutwilliger Beschädigung von Schuleigentum?</p>
+        <p class="q-text"><strong>Frage 2.</strong> Du fehlst wegen Krankheit eine <strong>ganze Woche</strong>. Was schreibt §9 für die telefonische Meldung vor?</p>
         <div class="options-grid">
-          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Nachsitzen</button>
-          <button class="opt-btn" data-q="qq2" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Rechtliche Ahndung</button>
-          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Keine Konsequenz</button>
-          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Putzdienst</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Eine einmalige Meldung am ersten Krankheitstag genügt</button>
+          <button class="opt-btn" data-q="qq2" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>An jedem versäumten Schultag bis 8:00 Uhr</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Es reicht die schriftliche Entschuldigung nach der Rückkehr</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Eine E-Mail ans Sekretariat bis 10:00 Uhr</button>
         </div>
         <div class="feedback" id="fb-qq2"></div>
       </div>
 
       <div class="quiz-question" id="qq3" data-answered="false">
-        <p class="q-text"><strong>Frage 3.</strong> <span style="color:var(--accent)">Schwieriger:</span> Welchen Bereich dürfen Schüler laut Hausordnung <strong>nicht</strong> betreten?</p>
+        <p class="q-text"><strong>Frage 3.</strong> Vier Orte am MWG. Welchen davon dürfen Schüler laut Hausordnung <strong>nicht</strong> betreten?</p>
         <div class="options-grid">
           <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Die Steinhalle</button>
-          <button class="opt-btn" data-q="qq3" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Das Dach und das Kellergeschoss</button>
-          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Das Café blu</button>
-          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Das grüne Klassenzimmer</button>
+          <button class="opt-btn" data-q="qq3" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Das Gelände der Jean-Paul-Schule</button>
+          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Das grüne Klassenzimmer</button>
+          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Die LABS</button>
         </div>
         <div class="feedback" id="fb-qq3"></div>
+      </div>
+
+      <div class="quiz-question" id="qq4" data-answered="false">
+        <p class="q-text"><strong>Frage 4.</strong> Eine Lehrkraft erscheint nicht zum Stundenbeginn. Was ist laut §11 korrekt?</p>
+        <div class="options-grid">
+          <button class="opt-btn" data-q="qq4" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Die Klasse darf nach 5 Minuten nach Hause gehen</button>
+          <button class="opt-btn" data-q="qq4" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Nach 5 Minuten verständigt der Klassensprecher das Sekretariat</button>
+          <button class="opt-btn" data-q="qq4" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Nach 15 Minuten meldet der Tafeldienst es der Schulleitung</button>
+          <button class="opt-btn" data-q="qq4" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Man wartet die ganze Stunde ab, dann ist sie frei</button>
+        </div>
+        <div class="feedback" id="fb-qq4"></div>
       </div>
     </div>
 
