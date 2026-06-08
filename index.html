@@ -36,7 +36,7 @@
   <div class="hero-content">
     <div class="hero-badge mono">§ Schulrecht</div>
     <h1 class="hero-title">SCHULRECHT<br><span class="accent-text">AM MWG</span></h1>
-    <p class="hero-sub">Was du dürfest, was du musst —<br>und was passiert, wenn nicht.</p>
+    <p class="hero-sub">Was du dürftest, was du musst —<br>und was passiert, wenn nicht.</p>
     <p class="hero-desc">Die Hausordnung des MWG interaktiv erleben — kein Vorwissen nötig. Einfach durchklicken.</p>
     <button class="btn-primary" onclick="App.goTo(1)">Starten &rarr;</button>
   </div>
@@ -47,7 +47,7 @@
 <section id="sec-1" class="section">
   <div class="section-inner">
     <div class="section-header">
-      <span class="section-tag mono">02 — Grundlagen</span>
+      <span class="section-tag mono">Grundlagen</span>
       <h2>Was ist die Hausordnung?</h2>
       <p class="section-lead">Klicke auf jede Karte, um sie umzudrehen und mehr zu erfahren.</p>
     </div>
@@ -98,29 +98,40 @@
     <div id="quiz-grundlagen" class="quiz-block">
       <div class="quiz-header">
         <span class="mono quiz-label">Mini-Quiz</span>
-        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 2 beantwortet</span>
+        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 3 beantwortet</span>
       </div>
 
       <div class="quiz-question" id="qq1" data-answered="false">
-        <p class="q-text"><strong>Frage 1:</strong> Wo gilt die Hausordnung des MWG?</p>
+        <p class="q-text"><strong>Frage 1.</strong> Wo gilt die Hausordnung des MWG?</p>
         <div class="options-grid">
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">A</span>Nur im Schulgebäude</button>
-          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">B</span>Auf dem gesamten Schulgelände</button>
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">C</span>Nur in Klassenzimmern</button>
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">D</span>Nur während des Unterrichts</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Nur im Schulgebäude</button>
+          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Auf dem gesamten Schulgelände</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Nur in Klassenzimmern</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Nur während des Unterrichts</button>
         </div>
         <div class="feedback" id="fb-qq1"></div>
       </div>
 
       <div class="quiz-question" id="qq2" data-answered="false">
-        <p class="q-text"><strong>Frage 2:</strong> Was passiert bei mutwilliger Beschädigung von Schuleigentum?</p>
+        <p class="q-text"><strong>Frage 2.</strong> Was passiert bei mutwilliger Beschädigung von Schuleigentum?</p>
         <div class="options-grid">
-          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">A</span>Nachsitzen</button>
-          <button class="opt-btn" data-q="qq2" data-correct="true" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">B</span>Rechtliche Ahndung</button>
-          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">C</span>Keine Konsequenz</button>
-          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="mono" style="color:var(--text-faint);margin-right:.6rem;font-size:.65rem">D</span>Putzdienst</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Nachsitzen</button>
+          <button class="opt-btn" data-q="qq2" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Rechtliche Ahndung</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Keine Konsequenz</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Putzdienst</button>
         </div>
         <div class="feedback" id="fb-qq2"></div>
+      </div>
+
+      <div class="quiz-question" id="qq3" data-answered="false">
+        <p class="q-text"><strong>Frage 3.</strong> <span style="color:var(--accent)">Schwieriger:</span> Welchen Bereich dürfen Schüler laut Hausordnung <strong>nicht</strong> betreten?</p>
+        <div class="options-grid">
+          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Die Steinhalle</button>
+          <button class="opt-btn" data-q="qq3" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Das Dach und das Kellergeschoss</button>
+          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Das Café blu</button>
+          <button class="opt-btn" data-q="qq3" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Das grüne Klassenzimmer</button>
+        </div>
+        <div class="feedback" id="fb-qq3"></div>
       </div>
     </div>
 
@@ -133,7 +144,7 @@
 <section id="sec-2" class="section">
   <div class="section-inner">
     <div class="section-header">
-      <span class="section-tag mono">03 — Unterricht & Pausen</span>
+      <span class="section-tag mono">Unterricht & Pausen</span>
       <h2>Zeiten, Regeln, Handy</h2>
       <p class="section-lead">Lerne die wichtigsten Zeiten kennen, dann ordne die Situationen richtig zu.</p>
     </div>
@@ -203,7 +214,15 @@
           <div class="assign-feedback"></div>
         </div>
         <div class="assign-item" data-id="a3" data-answer="false">
-          <span class="assign-text">Ein 8.-Klässler verlässt das Gelände ohne Genehmigung</span>
+          <span class="assign-text">Ein 8.-Klässler verlässt <strong>während der Unterrichtszeit</strong> das Gelände ohne Genehmigung</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+        <div class="assign-item" data-id="a6" data-answer="true">
+          <span class="assign-text"><span style="color:var(--accent);font-size:.78rem;font-family:var(--font-mono)">[KNIFFLIG] </span>Ein 7.-Klässler verlässt <strong>in der Mittagspause</strong> kurz das Gelände, um etwas zu essen</span>
           <div class="assign-btns">
             <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
             <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
@@ -212,6 +231,14 @@
         </div>
         <div class="assign-item" data-id="a4" data-answer="true">
           <span class="assign-text">Handy im Café blu in der Freistunde, ohne jemanden zu stören</span>
+          <div class="assign-btns">
+            <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
+            <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
+          </div>
+          <div class="assign-feedback"></div>
+        </div>
+        <div class="assign-item" data-id="a7" data-answer="false">
+          <span class="assign-text"><span style="color:var(--accent);font-size:.78rem;font-family:var(--font-mono)">[KNIFFLIG] </span>Am Schulcomputer nebenbei eine Limo trinken</span>
           <div class="assign-btns">
             <button class="assign-btn correct-btn" onclick="App.assign(this, true)" aria-label="Erlaubt">&#10003; Erlaubt</button>
             <button class="assign-btn wrong-btn" onclick="App.assign(this, false)" aria-label="Nicht erlaubt">&#10007; Nicht erlaubt</button>
@@ -230,7 +257,7 @@
     </div>
 
     <button class="btn-primary btn-next" id="next-unterricht" onclick="App.goTo(3)" style="display:none">Weiter &#8594;</button>
-    <p class="skip-hint" id="skip-unterricht">Ordne alle 5 Situationen zu, um fortzufahren.</p>
+    <p class="skip-hint" id="skip-unterricht">Ordne alle 7 Situationen zu, um fortzufahren.</p>
   </div>
 </section>
 
@@ -238,15 +265,15 @@
 <section id="sec-3" class="section">
   <div class="section-inner">
     <div class="section-header">
-      <span class="section-tag mono">04 — Pflichten & Rechte</span>
+      <span class="section-tag mono">Pflichten & Rechte</span>
       <h2>Was würdest du tun?</h2>
-      <p class="section-lead">Drei Szenarien — zwei Entscheidungen — eine richtige Antwort.</p>
+      <p class="section-lead">Vier Szenarien, je zwei Entscheidungen, eine richtige Antwort.</p>
     </div>
 
     <div id="scenarios-container">
       <!-- Szenario 1 -->
       <div class="scenario-block" id="scen-1" data-answered="false">
-        <div class="scenario-badge mono">Szenario 1 / 3</div>
+        <div class="scenario-badge mono">Szenario 1 / 4</div>
         <div class="scenario-text">
           <p class="scenario-situation">&#127775; Montagmorgen, 8:30 Uhr. Du wachst krank auf.</p>
           <p>Was tust du jetzt?</p>
@@ -264,7 +291,7 @@
 
       <!-- Szenario 2 -->
       <div class="scenario-block" id="scen-2" data-answered="false" style="display:none">
-        <div class="scenario-badge mono">Szenario 2 / 3</div>
+        <div class="scenario-badge mono">Szenario 2 / 4</div>
         <div class="scenario-text">
           <p class="scenario-situation">&#128366; Es ist 16:35 Uhr. Der Unterricht ist zu Ende. Was machst du zuerst?</p>
         </div>
@@ -281,7 +308,7 @@
 
       <!-- Szenario 3 -->
       <div class="scenario-block" id="scen-3" data-answered="false" style="display:none">
-        <div class="scenario-badge mono">Szenario 3 / 3</div>
+        <div class="scenario-badge mono">Szenario 3 / 4</div>
         <div class="scenario-text">
           <p class="scenario-situation">&#128168; Dein Freund fragt dich, ob ihr auf dem Schulhof eine E-Zigarette rauchen könnt.</p>
         </div>
@@ -295,6 +322,24 @@
         </div>
         <div class="scenario-result" id="scen-3-result"></div>
       </div>
+
+      <!-- Szenario 4 (schwerer) -->
+      <div class="scenario-block" id="scen-4" data-answered="false" style="display:none">
+        <div class="scenario-badge mono">Szenario 4 / 4 · Schwerer</div>
+        <div class="scenario-text">
+          <p class="scenario-situation">&#128197; Du hast übermorgen einen Zahnarzttermin und musst für zwei Schulstunden befreit werden.</p>
+          <p>Wie gehst du richtig vor?</p>
+        </div>
+        <div class="scenario-choices">
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 4)">
+            <span class="choice-label">A</span> Ich sage der Lehrkraft am betreffenden Tag kurz Bescheid.
+          </button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 4)">
+            <span class="choice-label">B</span> Meine Eltern beantragen die Befreiung heute über das Elternportal.
+          </button>
+        </div>
+        <div class="scenario-result" id="scen-4-result"></div>
+      </div>
     </div>
 
     <button class="btn-primary btn-next" id="next-pflichten" onclick="App.goTo(4)" style="display:none">Weiter &#8594;</button>
@@ -305,7 +350,7 @@
 <section id="sec-4" class="section">
   <div class="section-inner">
     <div class="section-header">
-      <span class="section-tag mono">05 — Mini Escape Room</span>
+      <span class="section-tag mono">Mini Escape Room</span>
       <h2>&#128274; Schließzeit</h2>
       <p class="section-lead">17:00 Uhr. Der Hausmeister hat abgeschlossen. Du bist noch drin. Drei Räume, drei Rätsel, ein Code.</p>
     </div>
@@ -488,7 +533,7 @@
 <section id="sec-5" class="section">
   <div class="section-inner">
     <div class="section-header">
-      <span class="section-tag mono">06 — Abschluss</span>
+      <span class="section-tag mono">Abschluss</span>
       <h2>Was du jetzt weißt</h2>
     </div>
 

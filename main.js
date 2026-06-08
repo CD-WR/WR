@@ -190,7 +190,7 @@ const App = {
       res.textContent = getScenFeedback(num, isCorrect);
     }
     State.pflichtenDone++;
-    if (State.pflichtenDone < 3) {
+    if (State.pflichtenDone < 4) {
       setTimeout(() => {
         const next = document.getElementById(`scen-${num+1}`);
         if (next) { next.style.display = 'block'; next.style.opacity = 0; setTimeout(() => { next.style.transition = 'opacity 0.5s'; next.style.opacity = 1; }, 50); }
@@ -393,7 +393,7 @@ const App = {
       f.className = 'feedback'; f.textContent = '';
     });
     document.querySelectorAll('.quiz-question').forEach(q => q.dataset.answered = 'false');
-    document.getElementById('q-grundlagen-progress').textContent = '0 / 2 beantwortet';
+    document.getElementById('q-grundlagen-progress').textContent = '0 / 3 beantwortet';
     // Reset assign
     document.querySelectorAll('.assign-item').forEach(item => {
       item.dataset.done = 'false';
@@ -441,18 +441,21 @@ const App = {
 function getFeedback(qid) {
   const map = {
     'qq1': 'Das Schulgelände umfasst auch Sportanlagen, Mensa, Parkplatz und den Park (§1.1).',
-    'qq2': 'Laut §1.2 der Hausordnung werden mutwillige Beschädigungen rechtlich geahndet.'
+    'qq2': 'Laut §1.2 der Hausordnung werden mutwillige Beschädigungen rechtlich geahndet.',
+    'qq3': '§2.6.2 — Dach, Keller, das Gelände der Jean-Paul-Schule und die Baustelle sind tabu. Steinhalle, Café blu und grünes Klassenzimmer sind dagegen erlaubte Aufenthaltsräume (§2.9).'
   };
   return map[qid] || 'Leider falsch.';
 }
 
 function getAssignFeedback(id, isCorrect, correct) {
   const explanations = {
-    'a1': 'Handys sind auf Gängen auch in Pausen nicht erlaubt (§10.1).',
-    'a2': 'Ab Jgst. 11 darf das Gelände in der Mittagspause verlassen werden (§2.8).',
-    'a3': 'Schüler Jgst. 5–10 brauchen eine ausdrückliche Genehmigung (§2.7).',
-    'a4': 'In Freistunden/Mittagspause im Café blu ist die Handynutzung erlaubt, wenn niemand gestört wird (§10.1).',
-    'a5': 'Schneeballwerfen ist laut §6.2 verboten.'
+    'a1': 'Handynutzung auf den Gängen ist auch in Pausen nicht erlaubt (§10).',
+    'a2': 'In der Mittagspause dürfen alle Schüler das Gelände verlassen (§2.8) — unabhängig von der Jahrgangsstufe.',
+    'a3': 'Während der Unterrichtszeit brauchen Schüler der Jgst. 5–10 eine ausdrückliche Genehmigung (§2.7).',
+    'a4': 'In Freistunden/Mittagspause ist die Handynutzung im Café blu erlaubt, wenn niemand gestört wird (§10).',
+    'a5': 'Schneeballwerfen ist aus Sicherheitsgründen verboten (§6.2).',
+    'a6': 'Achtung Falle: In der Mittagspause dürfen ALLE — auch die Unterstufe — das Gelände verlassen (§2.8). Die Genehmigungspflicht aus §2.7 gilt nur während der regulären Unterrichtszeit.',
+    'a7': 'Während der Nutzung der Schulcomputer sind Essen und Trinken untersagt (§10.4).'
   };
   const prefix = isCorrect ? '✓ Richtig! ' : '✗ Falsch. ';
   return prefix + (explanations[id] || '');
@@ -471,17 +474,21 @@ function getScenFeedback(num, isCorrect) {
     3: {
       true: '✓ Richtig! §5 verbietet Rauchen auf dem gesamten Schulgelände — inklusive E-Zigaretten und E-Shishas.',
       false: '✗ Falsch. Das Rauchverbot gilt für alle, überall auf dem Gelände — auch E-Zigaretten (§5).'
+    },
+    4: {
+      true: '✓ Richtig! Eine Unterrichtsbefreiung (kein Urlaub) wird rechtzeitig — bis zu drei Tage vorher — über das Elternportal bei der Schulleitung beantragt (§9.4).',
+      false: '✗ Zu spät und falscher Weg. Eine Befreiung muss bis zu drei Tage vorher über das Elternportal bei der Schulleitung beantragt werden — nicht spontan bei der Lehrkraft (§9.4).'
     }
   };
   return map[num][isCorrect ? 'true' : 'false'];
 }
 
 function checkGrundlagen() {
-  const q1 = document.getElementById('qq1').dataset.answered === 'true';
-  const q2 = document.getElementById('qq2').dataset.answered === 'true';
-  const answered = (q1 ? 1 : 0) + (q2 ? 1 : 0);
-  document.getElementById('q-grundlagen-progress').textContent = `${answered} / 2 beantwortet`;
-  if (q1 && q2 && !State.grundlagenDone) {
+  const ids = ['qq1', 'qq2', 'qq3'];
+  const done = ids.map(id => document.getElementById(id).dataset.answered === 'true');
+  const answered = done.filter(Boolean).length;
+  document.getElementById('q-grundlagen-progress').textContent = `${answered} / 3 beantwortet`;
+  if (done.every(Boolean) && !State.grundlagenDone) {
     State.grundlagenDone = true;
     const nb = document.getElementById('next-grundlagen');
     const sk = document.getElementById('skip-grundlagen');
