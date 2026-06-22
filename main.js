@@ -320,6 +320,7 @@ const App = {
     document.getElementById('skip-grundlagen').style.display = 'block';
     document.getElementById('skip-unterricht').style.display = 'block';
     document.querySelectorAll('.takeaway-card').forEach(c => c.classList.remove('visible'));
+    document.querySelectorAll('.gallery-item').forEach(g => g.classList.remove('revealed'));
     const qc = document.getElementById('quellen-content'); if (qc) qc.hidden = true;
     const qt = document.querySelector('.quellen-toggle'); if (qt) qt.textContent = 'Quellen & Grundlagen ▼';
     updateScoreBadge();
@@ -450,6 +451,7 @@ function showFinal() {
   if (pct < 0.5) extra += ' · Tipp: §3.5, §9 und §10 nochmal ansehen';
   document.getElementById('final-extra').textContent = extra;
   document.querySelectorAll('.takeaway-card').forEach((c,i) => setTimeout(() => c.classList.add('visible'), 300 + i*180));
+  document.querySelectorAll('.gallery-item').forEach((g,i) => setTimeout(() => g.classList.add('revealed'), 700 + i*160));
   Sound.complete();
 }
 
