@@ -55,7 +55,26 @@
     <div class="section-header">
       <span class="section-tag mono">Grundlagen</span>
       <h2>Die Basis, auf der alles steht</h2>
-      <p class="section-lead">Erst aufdecken, dann beweisen. Drehe die Karten, dann stell dich vier Fragen, die genaues Lesen verlangen.</p>
+      <p class="section-lead">Zuerst ein kurzer Rundgang durch die Hausordnung. Dann vertiefst du §1 mit den Karten &ndash; und stellst dich fünf Fragen, die von leicht nach schwer ansteigen.</p>
+    </div>
+
+    <!-- Geführte Tour -->
+    <div class="tour">
+      <span class="tour-kicker mono">Geführter Rundgang · Die Hausordnung in 11 Paragraphen</span>
+      <p class="tour-hint">Tippe auf einen Paragraphen, um die Kernregel zu sehen. Keine Eile &ndash; danach kommen die Fragen.</p>
+      <div class="tour-list">
+        <details class="tour-item"><summary><span class="tour-no mono">§1</span> Allgemeines</summary><div class="tour-body">Das Schulgelände umfasst Schulhaus, Pavillon, Sportanlagen, Mensa, Parkplatz und Park. Einrichtung pfleglich behandeln, Wertsachen ins Sekretariat, Plakate nur mit Genehmigung der Schulleitung.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§2</span> Unterricht</summary><div class="tour-body">Schulhaus Mo&ndash;Do 7:00&ndash;17:00, Fr bis 15:00. Beginn 7:50. In Pausen Klassenzimmer verlassen. Jgst. 5&ndash;10 dürfen das Gelände in der Unterrichtszeit nur mit Genehmigung verlassen &ndash; in der Mittagspause alle.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§3</span> Ordnung &amp; Sauberkeit</summary><div class="tour-body">Wöchentlicher Tafeldienst (2 Schüler), Mülltrennung. Beim Verlassen: Stuhl auf den Tisch, Fenster schließen, Licht aus. Schäden sofort melden.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§4</span> Bibliothek</summary><div class="tour-body">Nur für Mittel- und Oberstufe. Essen und Trinken sind dort nicht erlaubt.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§5</span> Rauchen</summary><div class="tour-body">Komplett verboten auf dem gesamten Gelände &ndash; ausdrücklich auch E-Zigaretten und E-Shishas.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§6</span> Sicherheit</summary><div class="tour-body">Alles unterlassen, was eine Gefährdung bringt. Schneeballwerfen ist verboten.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§7</span> Zweiräder</summary><div class="tour-body">Fahrräder in die Radständer vor dem Schulhaus. Für Motorroller gibt es eine Fläche auf der Ostseite.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§8</span> Parken</summary><div class="tour-body">Die 22 Parkplätze (FC-Gelände) sind für Lehrkräfte reserviert. Eltern und Schüler parken an der Friedrich-Ebert-Straße oder am Volksfestplatz.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§9</span> Erkrankung</summary><div class="tour-body">Telefonische Krankmeldung bis 8:00 Uhr an jedem versäumten Schultag, schriftlich nach der Rückkehr (auch Elternportal). Befreiungen bis zu 3 Tage vorher beantragen.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§10</span> Neue Medien</summary><div class="tour-body">Handy &amp; Co. von 7:00&ndash;16:35 Uhr aus und in der Tasche. Ausnahmen nur mit Lehrerlaubnis, bei Lehrereinsatz oder in Freistunden/Mittagspause an erlaubten Orten. WLAN MWGstudy: Mebis und Mathe-Gym ohne Anmeldung.</div></details>
+        <details class="tour-item"><summary><span class="tour-no mono">§11</span> Weitere Regelungen</summary><div class="tour-body">Fehlt eine Lehrkraft nach 5 Minuten, meldet der Klassensprecher es dem Sekretariat. Vertretungsstunden sind verbindlich. Jgst. 5&ndash;7 führen den Schulplaner.</div></details>
+      </div>
     </div>
 
     <div class="flip-cards-row">
@@ -81,38 +100,35 @@
 
     <div id="quiz-grundlagen" class="quiz-block">
       <div class="quiz-header">
-        <span class="mono quiz-label">Beweisaufnahme</span>
-        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 4 gelöst</span>
+        <span class="mono quiz-label">Beweisaufnahme · leicht &#8594; schwer</span>
+        <span id="q-grundlagen-progress" class="mono quiz-progress">0 / 5 gelöst</span>
       </div>
 
-      <!-- Q1 single, Zeitfalle -->
+      <!-- Q1 LEICHT -->
       <div class="quiz-question" id="qq1" data-answered="false" data-type="single">
-        <div class="q-head"><span class="diff-badge mittel">Mittel</span><p class="q-text"><strong>1.</strong> Das Schulhaus ist montags bis <strong>17:00 Uhr</strong> geöffnet. Bis wann müssen Smartphones und Smartwatches trotzdem ausgeschaltet in der Tasche bleiben?</p></div>
+        <div class="q-head"><span class="diff-badge leicht">Leicht</span><p class="q-text"><strong>1.</strong> Zum Warmwerden: Wo gilt die Hausordnung des MWG?</p></div>
         <div class="options-grid">
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Bis 17:00 Uhr, wenn das Schulhaus schließt</button>
-          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Bis 16:35 Uhr</button>
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Bis zum eigenen Unterrichtsende</button>
-          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Bis 15:00 Uhr</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Nur im Schulgebäude</button>
+          <button class="opt-btn" data-q="qq1" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Auf dem gesamten Schulgelände</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Nur in den Klassenzimmern</button>
+          <button class="opt-btn" data-q="qq1" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Nur während des Unterrichts</button>
         </div>
         <div class="feedback" id="fb-qq1"></div>
       </div>
 
-      <!-- Q2 multi-select -->
-      <div class="quiz-question" id="qq2" data-answered="false" data-type="multi">
-        <div class="q-head"><span class="diff-badge schwer">Schwer</span><p class="q-text"><strong>2.</strong> Wähle <strong>alle</strong> Situationen, in denen die Handynutzung erlaubt ist. Nur komplett richtig zählt.</p></div>
-        <div class="ms-options">
-          <button class="ms-opt" data-correct="true" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Eine Lehrkraft erlaubt dir einen Anruf</button>
-          <button class="ms-opt" data-correct="false" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>In der großen Pause auf dem Gang</button>
-          <button class="ms-opt" data-correct="true" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Eine Lehrkraft bietet den Geräte-Einsatz im Unterricht an</button>
-          <button class="ms-opt" data-correct="false" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Kurz zwischen zwei Unterrichtsstunden</button>
-          <button class="ms-opt" data-correct="true" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>In der Freistunde im Park, ohne jemanden zu stören</button>
-          <button class="ms-opt" data-correct="false" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Im Café blu mitten im Unterricht</button>
+      <!-- Q2 MITTEL, Zeitfalle -->
+      <div class="quiz-question" id="qq2" data-answered="false" data-type="single">
+        <div class="q-head"><span class="diff-badge mittel">Mittel</span><p class="q-text"><strong>2.</strong> Das Schulhaus ist montags bis <strong>17:00 Uhr</strong> geöffnet. Bis wann müssen Smartphones und Smartwatches trotzdem ausgeschaltet in der Tasche bleiben?</p></div>
+        <div class="options-grid">
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Bis 17:00 Uhr, wenn das Schulhaus schließt</button>
+          <button class="opt-btn" data-q="qq2" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Bis 16:35 Uhr</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Bis zum eigenen Unterrichtsende</button>
+          <button class="opt-btn" data-q="qq2" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Bis 15:00 Uhr</button>
         </div>
-        <button class="btn-small ms-submit" onclick="App.msSubmit('qq2')">Antwort einreichen</button>
         <div class="feedback" id="fb-qq2"></div>
       </div>
 
-      <!-- Q3 only-one-true -->
+      <!-- Q3 SCHWER, only-one-true -->
       <div class="quiz-question" id="qq3" data-answered="false" data-type="single">
         <div class="q-head"><span class="diff-badge schwer">Schwer</span><p class="q-text"><strong>3.</strong> Nur <strong>eine</strong> dieser Aussagen über das Verlassen des Schulgeländes ist korrekt. Welche?</p></div>
         <div class="options-grid">
@@ -124,16 +140,31 @@
         <div class="feedback" id="fb-qq3"></div>
       </div>
 
-      <!-- Q4 chained reasoning -->
-      <div class="quiz-question" id="qq4" data-answered="false" data-type="single">
-        <div class="q-head"><span class="diff-badge profi">Profi</span><p class="q-text"><strong>4.</strong> Es ist <strong>9:25 Uhr</strong>. Du holst im Café blu dein Handy heraus, um eine Nachricht zu schreiben &ndash; niemand wird gestört. Erlaubt?</p></div>
-        <div class="options-grid">
-          <button class="opt-btn" data-q="qq4" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Ja, im Café blu ist die Nutzung ja gestattet</button>
-          <button class="opt-btn" data-q="qq4" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Nein &ndash; 9:25 Uhr liegt in der großen Pause, nicht in einer Freistunde</button>
-          <button class="opt-btn" data-q="qq4" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Ja, weil niemand gestört wird</button>
-          <button class="opt-btn" data-q="qq4" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Ja, aber nur bis 16:35 Uhr</button>
+      <!-- Q4 SCHWER, multi-select -->
+      <div class="quiz-question" id="qq4" data-answered="false" data-type="multi">
+        <div class="q-head"><span class="diff-badge schwer">Schwer</span><p class="q-text"><strong>4.</strong> Wähle <strong>alle</strong> Situationen, in denen die Handynutzung erlaubt ist. Nur komplett richtig zählt.</p></div>
+        <div class="ms-options">
+          <button class="ms-opt" data-correct="true" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Eine Lehrkraft erlaubt dir einen Anruf</button>
+          <button class="ms-opt" data-correct="false" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>In der großen Pause auf dem Gang</button>
+          <button class="ms-opt" data-correct="true" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Eine Lehrkraft bietet den Geräte-Einsatz im Unterricht an</button>
+          <button class="ms-opt" data-correct="false" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Kurz zwischen zwei Unterrichtsstunden</button>
+          <button class="ms-opt" data-correct="true" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>In der Freistunde im Park, ohne jemanden zu stören</button>
+          <button class="ms-opt" data-correct="false" onclick="App.msToggle(this)"><span class="ms-box">&#9633;</span>Im Café blu mitten im Unterricht</button>
         </div>
+        <button class="btn-small ms-submit" onclick="App.msSubmit('qq4')">Antwort einreichen</button>
         <div class="feedback" id="fb-qq4"></div>
+      </div>
+
+      <!-- Q5 PROFI, chained reasoning -->
+      <div class="quiz-question" id="qq5" data-answered="false" data-type="single">
+        <div class="q-head"><span class="diff-badge profi">Profi</span><p class="q-text"><strong>5.</strong> Es ist <strong>9:25 Uhr</strong>. Du holst im Café blu dein Handy heraus, um eine Nachricht zu schreiben &ndash; niemand wird gestört. Erlaubt?</p></div>
+        <div class="options-grid">
+          <button class="opt-btn" data-q="qq5" data-correct="false" onclick="App.answer(this)"><span class="opt-key">A</span>Ja, im Café blu ist die Nutzung ja gestattet</button>
+          <button class="opt-btn" data-q="qq5" data-correct="true" onclick="App.answer(this)"><span class="opt-key">B</span>Nein &ndash; 9:25 Uhr liegt in der großen Pause, nicht in einer Freistunde</button>
+          <button class="opt-btn" data-q="qq5" data-correct="false" onclick="App.answer(this)"><span class="opt-key">C</span>Ja, weil niemand gestört wird</button>
+          <button class="opt-btn" data-q="qq5" data-correct="false" onclick="App.answer(this)"><span class="opt-key">D</span>Ja, aber nur bis 16:35 Uhr</button>
+        </div>
+        <div class="feedback" id="fb-qq5"></div>
       </div>
     </div>
 
@@ -173,13 +204,13 @@
         <span class="assign-sub">Tippe bei jedem Fall auf <strong>Erlaubt</strong> oder <strong>Verboten</strong>.</span>
       </div>
       <div id="assign-items">
+        <div class="assign-item" data-id="a5" data-answer="false"><span class="assign-text">Schneeballwerfen auf dem Pausenhof</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
         <div class="assign-item" data-id="a1" data-answer="false"><span class="assign-text">Handy in der großen Pause auf dem Gang benutzen</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
-        <div class="assign-item" data-id="a6" data-answer="true"><span class="assign-text"><span class="mini-flag">Falle</span>Ein 7.-Klässler verlässt <strong>in der Mittagspause</strong> kurz das Gelände, um etwas zu essen</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
+        <div class="assign-item" data-id="a4" data-answer="true"><span class="assign-text">Handy im Café blu in der Freistunde, ohne jemanden zu stören</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
         <div class="assign-item" data-id="a3" data-answer="false"><span class="assign-text">Ein 8.-Klässler verlässt <strong>während der Unterrichtszeit</strong> das Gelände ohne Genehmigung</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
+        <div class="assign-item" data-id="a6" data-answer="true"><span class="assign-text"><span class="mini-flag">Falle</span>Ein 7.-Klässler verlässt <strong>in der Mittagspause</strong> kurz das Gelände, um etwas zu essen</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
         <div class="assign-item" data-id="a7" data-answer="false"><span class="assign-text"><span class="mini-flag">Falle</span>Am Schulcomputer nebenbei eine Limo trinken</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
         <div class="assign-item" data-id="a8" data-answer="false"><span class="assign-text"><span class="mini-flag">Falle</span>Ein belegtes Brötchen mit in die Bibliothek nehmen, um beim Lesen zu essen</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
-        <div class="assign-item" data-id="a4" data-answer="true"><span class="assign-text">Handy im Café blu in der Freistunde, ohne jemanden zu stören</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
-        <div class="assign-item" data-id="a5" data-answer="false"><span class="assign-text">Schneeballwerfen auf dem Pausenhof</span><div class="assign-btns"><button class="assign-btn" onclick="App.assign(this, true)">&#10003; Erlaubt</button><button class="assign-btn" onclick="App.assign(this, false)">&#10007; Verboten</button></div><div class="assign-feedback"></div></div>
       </div>
     </div>
 
@@ -199,31 +230,31 @@
 
     <div id="scenarios-container">
       <div class="scenario-block" id="scen-1" data-answered="false">
-        <div class="scenario-badge mono">Fall 1 / 4 · Erkrankung</div>
-        <div class="scenario-text"><p class="scenario-situation">Du wachst krank auf. Deine Eltern sind schon zur Arbeit und merken es erst um 8:15 Uhr.</p><p>Was ist regelkonform?</p></div>
+        <div class="scenario-badge mono">Fall 1 / 4 · Rauchen · Leicht</div>
+        <div class="scenario-text"><p class="scenario-situation">Ein Mitschüler sagt: „E-Zigaretten sind kein echtes Rauchen, das ist auf dem Schulhof schon okay."</p><p>Stimmt das?</p></div>
         <div class="scenario-choices">
-          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 1)"><span class="choice-label">A</span>Anruf um 8:15 Uhr genügt, Hauptsache überhaupt gemeldet</button>
-          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 1)"><span class="choice-label">B</span>Die Meldung hätte bis 8:00 Uhr vorliegen müssen &ndash; ihr ruft trotzdem sofort an und reicht es nach</button>
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 1)"><span class="choice-label">A</span>Stimmt &ndash; das Verbot meint nur echte Zigaretten</button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 1)"><span class="choice-label">B</span>Falsch &ndash; §5 nennt E-Zigaretten und E-Shishas ausdrücklich, überall auf dem Gelände</button>
         </div>
         <div class="scenario-result" id="scen-1-result"></div>
       </div>
 
       <div class="scenario-block" id="scen-2" data-answered="false" style="display:none">
-        <div class="scenario-badge mono">Fall 2 / 4 · Klassenzimmer</div>
-        <div class="scenario-text"><p class="scenario-situation">Letzte Stunde, 13:30 Uhr. Die Klasse stürmt raus, dein Bus fährt gleich.</p><p>Was musst du laut §3.5 erledigen, bevor du gehst?</p></div>
+        <div class="scenario-badge mono">Fall 2 / 4 · Erkrankung · Mittel</div>
+        <div class="scenario-text"><p class="scenario-situation">Du wachst krank auf. Deine Eltern sind schon zur Arbeit und merken es erst um 8:15 Uhr.</p><p>Was ist regelkonform?</p></div>
         <div class="scenario-choices">
-          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 2)"><span class="choice-label">A</span>Tafel wischen und den Müll trennen, dann raus</button>
-          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 2)"><span class="choice-label">B</span>Stuhl auf den Tisch, Fenster schließen, Licht aus</button>
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 2)"><span class="choice-label">A</span>Anruf um 8:15 Uhr genügt, Hauptsache überhaupt gemeldet</button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 2)"><span class="choice-label">B</span>Die Meldung hätte bis 8:00 Uhr vorliegen müssen &ndash; ihr ruft trotzdem sofort an und reicht es nach</button>
         </div>
         <div class="scenario-result" id="scen-2-result"></div>
       </div>
 
       <div class="scenario-block" id="scen-3" data-answered="false" style="display:none">
-        <div class="scenario-badge mono">Fall 3 / 4 · Rauchen</div>
-        <div class="scenario-text"><p class="scenario-situation">Ein Mitschüler sagt: „E-Zigaretten sind kein echtes Rauchen, das ist auf dem Schulhof schon okay."</p><p>Stimmt das?</p></div>
+        <div class="scenario-badge mono">Fall 3 / 4 · Klassenzimmer · Schwer</div>
+        <div class="scenario-text"><p class="scenario-situation">Letzte Stunde, 13:30 Uhr. Die Klasse stürmt raus, dein Bus fährt gleich.</p><p>Was musst du laut §3.5 erledigen, bevor du gehst?</p></div>
         <div class="scenario-choices">
-          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 3)"><span class="choice-label">A</span>Stimmt &ndash; das Verbot meint nur echte Zigaretten</button>
-          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 3)"><span class="choice-label">B</span>Falsch &ndash; §5 nennt E-Zigaretten und E-Shishas ausdrücklich, überall auf dem Gelände</button>
+          <button class="choice-btn" data-correct="false" onclick="App.scenario(this, 3)"><span class="choice-label">A</span>Tafel wischen und den Müll trennen, dann raus</button>
+          <button class="choice-btn" data-correct="true" onclick="App.scenario(this, 3)"><span class="choice-label">B</span>Stuhl auf den Tisch, Fenster schließen, Licht aus</button>
         </div>
         <div class="scenario-result" id="scen-3-result"></div>
       </div>

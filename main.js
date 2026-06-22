@@ -304,7 +304,7 @@ const App = {
     document.querySelectorAll('.ms-submit').forEach(b => b.disabled = false);
     document.querySelectorAll('.feedback').forEach(f => { f.className = 'feedback'; f.textContent = ''; });
     document.querySelectorAll('.quiz-question').forEach(q => q.dataset.answered = 'false');
-    document.getElementById('q-grundlagen-progress').textContent = '0 / 4 gelöst';
+    document.getElementById('q-grundlagen-progress').textContent = '0 / 5 gelöst';
     document.querySelectorAll('.assign-item').forEach(it => {
       it.dataset.done = 'false';
       it.querySelectorAll('.assign-btn').forEach(b => { b.disabled = false; b.classList.remove('selected-correct','selected-wrong'); });
@@ -331,10 +331,11 @@ const App = {
 
 /* ═══ FEEDBACK DATA ═══ */
 const QFEEDBACK = {
-  qq1: 'Die Geräte müssen von 7:00–16:35 Uhr aus sein (§10) — auch wenn das Schulhaus noch bis 17:00 offen ist.',
-  qq2: 'Erlaubt sind nur: Anruf mit Lehrerlaubnis, Lehrereinsatz im Unterricht und Freistunden/Mittagspause an erlaubten Orten ohne Störung. Pausen, Gänge und Zwischenzeiten bleiben tabu (§10).',
+  qq1: 'Die Hausordnung gilt auf dem gesamten Schulgelände — Schulhaus, Pavillon, Sportanlagen, Mensa, Parkplatz und Park (§1.1).',
+  qq2: 'Die Geräte müssen von 7:00–16:35 Uhr aus sein (§10) — auch wenn das Schulhaus noch bis 17:00 offen ist.',
   qq3: 'Nur B stimmt: In der Mittagspause dürfen alle das Gelände verlassen (§2.8). Während des Unterrichts brauchen Jgst. 5–10 eine ausdrückliche Genehmigung (§2.7).',
-  qq4: 'Das Café blu gilt nur für Freistunden und die Mittagspause. 9:20–9:35 Uhr ist die große Pause — Handynutzung also verboten (§10 + §2.5).'
+  qq4: 'Erlaubt sind nur: Anruf mit Lehrerlaubnis, Lehrereinsatz im Unterricht und Freistunden/Mittagspause an erlaubten Orten ohne Störung. Pausen, Gänge und Zwischenzeiten bleiben tabu (§10).',
+  qq5: 'Das Café blu gilt nur für Freistunden und die Mittagspause. 9:20–9:35 Uhr ist die große Pause — Handynutzung also verboten (§10 + §2.5).'
 };
 const ASSIGN_FB = {
   a1: 'Handynutzung auf den Gängen ist auch in Pausen verboten (§10).',
@@ -346,9 +347,9 @@ const ASSIGN_FB = {
   a8: 'In die Bibliothek dürfen Esswaren und Getränke nicht mitgenommen werden (§4.2).'
 };
 const SCEN_FB = {
-  1: { true: '✓ Genau. Die Meldung muss bis 8:00 Uhr vorliegen (§9.1). Verspätet ist sie regelwidrig — sofort melden und nachreichen ist trotzdem richtig.', false: '✗ 8:15 Uhr ist zu spät: §9.1 verlangt die telefonische Meldung bis 8:00 Uhr, an jedem versäumten Schultag.' },
-  2: { true: '✓ §3.5: Stuhl auf den Tisch, Fenster schließen, Licht aus. Tafel und Müll sind Sache des Tafeldienstes (§3.4), nicht deine Abgehpflicht.', false: '✗ Tafel und Müll regelt der Tafeldienst (§3.4). Beim Verlassen gilt §3.5: Stuhl hoch, Fenster zu, Licht aus.' },
-  3: { true: '✓ §5 nennt E-Zigaretten und E-Shishas ausdrücklich. Das Verbot gilt für alle, überall auf dem Gelände.', false: '✗ Falsch. §5 verbietet ausdrücklich auch E-Zigaretten und E-Shishas — auf dem gesamten Gelände.' },
+  1: { true: '✓ §5 nennt E-Zigaretten und E-Shishas ausdrücklich. Das Verbot gilt für alle, überall auf dem Gelände.', false: '✗ Falsch. §5 verbietet ausdrücklich auch E-Zigaretten und E-Shishas — auf dem gesamten Gelände.' },
+  2: { true: '✓ Genau. Die Meldung muss bis 8:00 Uhr vorliegen (§9.1). Verspätet ist sie regelwidrig — sofort melden und nachreichen ist trotzdem richtig.', false: '✗ 8:15 Uhr ist zu spät: §9.1 verlangt die telefonische Meldung bis 8:00 Uhr, an jedem versäumten Schultag.' },
+  3: { true: '✓ §3.5: Stuhl auf den Tisch, Fenster schließen, Licht aus. Tafel und Müll sind Sache des Tafeldienstes (§3.4), nicht deine Abgehpflicht.', false: '✗ Tafel und Müll regelt der Tafeldienst (§3.4). Beim Verlassen gilt §3.5: Stuhl hoch, Fenster zu, Licht aus.' },
   4: { true: '✓ §9.4: Befreiungen (kein Urlaub) werden rechtzeitig, bis zu drei Tage vorher, über das Elternportal bei der Schulleitung beantragt.', false: '✗ Spontan bei der Lehrkraft reicht nicht. §9.4: bis zu drei Tage vorher über das Elternportal bei der Schulleitung.' }
 };
 
@@ -416,9 +417,9 @@ function resetEscape() {
 
 /* ═══ COMPLETION CHECKS ═══ */
 function checkGrundlagen() {
-  const ids = ['qq1','qq2','qq3','qq4'];
+  const ids = ['qq1','qq2','qq3','qq4','qq5'];
   const done = ids.map(id => document.getElementById(id).dataset.answered === 'true');
-  document.getElementById('q-grundlagen-progress').textContent = `${done.filter(Boolean).length} / 4 gelöst`;
+  document.getElementById('q-grundlagen-progress').textContent = `${done.filter(Boolean).length} / 5 gelöst`;
   if (done.every(Boolean) && !State.grundlagenDone) {
     State.grundlagenDone = true;
     document.getElementById('next-grundlagen').style.display = 'inline-block';

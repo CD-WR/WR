@@ -160,6 +160,24 @@ strong { font-weight: 500; color: var(--text-bright); }
 .section-header h2 { font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 300; letter-spacing: -0.025em; margin-bottom: 0.6rem; position: relative; z-index: 1; color: var(--text-bright); }
 .section-lead { color: var(--text-dim); font-size: 0.95rem; position: relative; z-index: 1; max-width: 620px; }
 
+/* ═══ TOUR (geführter Rundgang) ═══ */
+.tour { margin-bottom: 3rem; }
+.tour-kicker { display: block; font-size: 0.66rem; letter-spacing: 0.16em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.5rem; }
+.tour-hint { font-size: 0.88rem; color: var(--text-dim); margin-bottom: 1.25rem; }
+.tour-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.tour-item { background: var(--bg-card); }
+.tour-item > summary {
+  list-style: none; cursor: pointer; padding: 0.85rem 1.1rem; display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.92rem; color: var(--text); transition: background 0.18s, color 0.18s; user-select: none;
+}
+.tour-item > summary::-webkit-details-marker { display: none; }
+.tour-item > summary::after { content: '+'; margin-left: auto; font-family: var(--font-mono); color: var(--text-faint); font-size: 1.1rem; transition: transform 0.2s, color 0.2s; }
+.tour-item[open] > summary::after { content: '+'; transform: rotate(45deg); color: var(--accent); }
+.tour-item > summary:hover { background: var(--bg-elevated); color: var(--text-bright); }
+.tour-no { color: var(--accent); font-size: 0.8rem; flex-shrink: 0; min-width: 2.4ch; }
+.tour-body { padding: 0 1.1rem 1rem 1.1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.65; animation: tourReveal 0.3s ease; }
+@keyframes tourReveal { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
 /* ═══ FLIP CARDS ═══ */
 .flip-cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; perspective: 1200px; }
 .flip-card { height: 200px; cursor: pointer; background: var(--bg); perspective: 1200px; }
@@ -418,4 +436,5 @@ strong { font-weight: 500; color: var(--text-bright); }
   .q-head { flex-direction: column; gap: 0.5rem; }
   .gallery-row { grid-template-columns: repeat(2, 1fr); }
   .hero-logo { height: 34px; }
+  .tour-list { grid-template-columns: 1fr; }
 }
