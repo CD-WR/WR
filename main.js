@@ -70,11 +70,13 @@ function updateScoreBadge() {
 /* ═══ PARTICLES ═══ */
 function initParticles() {
   const el = document.getElementById('particles'); if (!el) return;
+  const colors = ['#2f80c4', '#ef6a52', '#f0a72f', '#4faf78', '#8a6dc5'];
   el.innerHTML = '';
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 18; i++) {
     const p = document.createElement('div'); p.className = 'particle';
-    const s = 4 + Math.random() * 38;
-    p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${6+Math.random()*10}s;--delay:${-Math.random()*10}s;`;
+    const s = 8 + Math.random() * 30;
+    const c = colors[i % colors.length];
+    p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;background:${c};--dur:${6+Math.random()*10}s;--delay:${-Math.random()*10}s;`;
     el.appendChild(p);
   }
 }
